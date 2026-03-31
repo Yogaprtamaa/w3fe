@@ -1,0 +1,647 @@
+{
+  "address": "8tUz3PDatBckE2FPAmFx4UUDV59SustzdmcwS7sLpbi1",
+  "metadata": {
+    "name": "z4_contracts",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Z4 smart contract"
+  },
+  "instructions": [
+    {
+      "name": "allocate_plot",
+      "discriminator": [
+        66,
+        178,
+        176,
+        129,
+        127,
+        65,
+        100,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user_tani_account",
+          "writable": true
+        },
+        {
+          "name": "tani_treasury",
+          "writable": true
+        },
+        {
+          "name": "tani_mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "plot_id",
+          "type": "string"
+        },
+        {
+          "name": "nft_id",
+          "type": "string"
+        },
+        {
+          "name": "tani_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "buy_tani",
+      "discriminator": [
+        243,
+        242,
+        207,
+        172,
+        125,
+        124,
+        147,
+        4
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "buyer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "buyer_usdt_account",
+          "writable": true
+        },
+        {
+          "name": "buyer_tani_account",
+          "writable": true
+        },
+        {
+          "name": "usdt_treasury",
+          "writable": true
+        },
+        {
+          "name": "sale_inventory",
+          "writable": true
+        },
+        {
+          "name": "sale_authority",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  97,
+                  108,
+                  101,
+                  95,
+                  97,
+                  117,
+                  116,
+                  104,
+                  111,
+                  114,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "usdt_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "tani_mint"
+        },
+        {
+          "name": "usdt_mint"
+        },
+        {
+          "name": "sale_inventory"
+        },
+        {
+          "name": "usdt_treasury"
+        },
+        {
+          "name": "tani_treasury"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "tani_per_usdt",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "toggle_allocation",
+      "discriminator": [
+        12,
+        236,
+        15,
+        188,
+        185,
+        36,
+        45,
+        53
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "platform_config"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "active",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "toggle_token_sale",
+      "discriminator": [
+        73,
+        167,
+        158,
+        205,
+        125,
+        8,
+        170,
+        198
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "platform_config"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "active",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "update_rate",
+      "discriminator": [
+        24,
+        225,
+        53,
+        189,
+        72,
+        212,
+        225,
+        178
+      ],
+      "accounts": [
+        {
+          "name": "platform_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true,
+          "relations": [
+            "platform_config"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "new_rate",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PlatformConfig",
+      "discriminator": [
+        160,
+        78,
+        128,
+        0,
+        248,
+        83,
+        230,
+        160
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "PlotAllocated",
+      "discriminator": [
+        187,
+        128,
+        220,
+        237,
+        80,
+        88,
+        45,
+        148
+      ]
+    },
+    {
+      "name": "TokenPurchased",
+      "discriminator": [
+        3,
+        73,
+        186,
+        50,
+        15,
+        181,
+        213,
+        37
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InsufficientInventory",
+      "msg": "Sale inventory tidak cukup stok $TANI"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidUsdtAmount",
+      "msg": "Jumlah USDT harus lebih dari 0"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidRate",
+      "msg": "Rate tidak valid"
+    },
+    {
+      "code": 6003,
+      "name": "PlotNotAvailable",
+      "msg": "Plot tidak tersedia untuk alokasi"
+    },
+    {
+      "code": 6004,
+      "name": "InsufficientTani",
+      "msg": "Saldo $TANI tidak cukup"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidAllocationAmount",
+      "msg": "Jumlah alokasi tidak valid"
+    },
+    {
+      "code": 6006,
+      "name": "Overflow",
+      "msg": "Overflow kalkulasi"
+    },
+    {
+      "code": 6007,
+      "name": "Unauthorized",
+      "msg": "Wallet tidak authorized"
+    },
+    {
+      "code": 6008,
+      "name": "TokenSaleInactive",
+      "msg": "Token Sale sedang tidak aktif"
+    },
+    {
+      "code": 6009,
+      "name": "AllocationInactive",
+      "msg": "Allocation sedang tidak aktif"
+    }
+  ],
+  "types": [
+    {
+      "name": "PlatformConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "tani_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "usdt_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "sale_inventory",
+            "type": "pubkey"
+          },
+          {
+            "name": "usdt_treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "tani_treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "tani_per_usdt",
+            "type": "u64"
+          },
+          {
+            "name": "token_sale_active",
+            "type": "bool"
+          },
+          {
+            "name": "allocation_active",
+            "type": "bool"
+          },
+          {
+            "name": "total_tani_sold",
+            "type": "u64"
+          },
+          {
+            "name": "total_tani_burned",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlotAllocated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "plot_id",
+            "type": "string"
+          },
+          {
+            "name": "tani_spent",
+            "type": "u64"
+          },
+          {
+            "name": "treasury_amount",
+            "type": "u64"
+          },
+          {
+            "name": "burn_amount",
+            "type": "u64"
+          },
+          {
+            "name": "nft_id",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TokenPurchased",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "buyer",
+            "type": "pubkey"
+          },
+          {
+            "name": "usdt_amount",
+            "type": "u64"
+          },
+          {
+            "name": "tani_amount",
+            "type": "u64"
+          },
+          {
+            "name": "rate",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+} 
